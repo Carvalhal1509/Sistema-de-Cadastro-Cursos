@@ -1,0 +1,182 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aplicações Distribuidas e WEB I</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="main" style="margin-top:60px;">
+
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form">
+                        <h2 class="form-title">Registrar</h2>
+                        </br>
+
+                        <div class="row row-space">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <label class="label">Nome</label>
+                                    <input class="input--style-4" type="text" name="first_name" required>
+                                    <div class="valid-feedback">Nome cadastrado com sucesso!</div>
+                                    <div class="invalid-feedback">Digite seu nome!</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <label class="label">Sobrenome</label>
+                                    <input class="input--style-4" type="text" name="last_name" required>
+                                    <div class="valid-feedback">Sobrenome cadastrado com sucesso!</div>
+                                    <div class="invalid-feedback">Digite seu sobrenome!</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row row-space">
+                            <div class="col-6">
+                                <div class="-form-control">
+                                    <div class="input-group-icon">
+                                        <label class="label">Data de Nascimento</label>
+                                        <input class="input--style-4 js-datepicker" type="date" name="birthday" required>
+                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                        <div class="valid-feedback">Data cadastrada com sucesso!</div>
+                                        <div class="invalid-feedback">Digite seu sobrenome!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+
+                                    <div class="p-t-10">
+                                        <label class="label">Sexo</label>
+                                        <label class="radio-container m-r-45">
+                                            Masculino
+                                            <input type="radio" name="gender" autocomplete="off" required>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">
+                                            Feminino
+                                            <input type="radio" name="gender" autocomplete="off" required>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <div class="valid-feedback">Gênero cadastrado com sucesso!</div>
+                                        <div class="invalid-feedback">Selecione um gênero!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <label class="label">Email</label>
+                                    <input class="input--style-4" type="email" name="email" placeholder="ex:eu@hotmail.com" required>
+                                    <div class="valid-feedback">Email cadastrado com sucesso!</div>
+                                    <div class="invalid-feedback">Digite seu email!</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <label class="label">Telefone</label>
+                                    <input class="input--style-4" type="number" name="phone" placeholder="(71)9999-9999" required>
+                                    <div class="valid-feedback">Telefone cadastrado com sucesso!</div>
+                                    <div class="invalid-feedback">Digite seu telefone!</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row row-space">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <label class="label">Senha</label>
+                                    <input class="input--style-4" type="password" name="senha" required>
+                                    <div class="valid-feedback">Senha cadastrado com sucesso!</div>
+                                    <div class="invalid-feedback">Digite sua senha!</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <label class="label">Confirmar</label>
+                                    <input class="input--style-4" type="password" name="senha-confirm" required>
+                                    <div class="valid-feedback">Email cadastrado com sucesso!</div>
+                                    <div class="invalid-feedback">Esse email já está cadastrado!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-6">
+                                <select class="form-control" required>
+                                    <option selected disabled value="">Interesses</option>
+                                    <option value="analise">Análise e desenvolvimento de Sistemas</option>
+                                    <option value="banco">Banco de dados</option>
+                                    <option value="dev">Desenvolvimento</option>
+                                    <option value="engenharia">Engenharia de software</option>
+                                    <option value="redes">Redes de computadores</option>
+                                </select>
+                                <div class="valid-feedback">Você selecionou o interesse</div>
+                                <div class="invalid-feedback">Porfavor selecione a area de interesse!</div>
+                            </div>
+
+                            <div class="col-6">
+                                <select class="form-control" required>
+                                    <option selected disabled value="">Inscrição</option>
+                                    <option value="aluno">Aluno</option>
+                                </select>
+                                <div class="valid-feedback">Você selecionou a inscrição</div>
+                                <div class="invalid-feedback">Porfavor selecione a area de inscrição!</div>
+                            </div>
+                        </div>
+
+                        </br>
+
+                        <div class="row row-space">
+                            <div class="col-12">
+                                <label for="exampleFormControlTextarea1" class="label">Dúvidas ou Sugestões</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required>
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>Eu aceito os   <a href="#" class="term-service">Termos de serviço</a></label>
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Entrar" />
+                        </div>
+                    </form>
+                    <p class="loginhere">
+                        Já possui conta ? <a href="#" class="loginhere-link">Faça o login</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+</body>
+
